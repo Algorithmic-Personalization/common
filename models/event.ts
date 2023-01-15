@@ -3,8 +3,8 @@
 import {Entity, Column} from 'typeorm';
 import {IsInt, IsNotEmpty, IsString, IsPositive} from 'class-validator';
 
-import Model from '../lib/model';
-import {uuidv4} from '../../util';
+import Model from '../../server/lib/model';
+import {uuidv4} from '../util';
 
 export enum EventType {
 	PAGE_VIEW = 'PAGE_VIEW',

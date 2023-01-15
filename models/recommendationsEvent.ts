@@ -1,5 +1,5 @@
 import Event, {EventType} from './event';
-import type Recommendation from '../../extension/models/Recommendation';
+import type Recommendation from '../../common/types/Recommendation';
 
 export class RecommendationsEvent extends Event {
 	constructor(

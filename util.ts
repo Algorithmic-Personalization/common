@@ -4,7 +4,7 @@ export {v4 as uuidv4} from 'uuid';
 
 import {validate as validateInstance, type ValidationError} from 'class-validator';
 
-import type Recommendation from './extension/models/Recommendation';
+import type Recommendation from './types/Recommendation';
 
 export type Success<T> = {
 	kind: 'Success';
