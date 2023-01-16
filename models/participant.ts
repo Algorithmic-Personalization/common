@@ -3,7 +3,7 @@
 import {Entity, Column} from 'typeorm';
 import {IsNotEmpty, IsString} from 'class-validator';
 
-import Model from '../../server/lib/model';
+import Model from '../lib/model';
 
 export enum ExperimentArm {
 	TREATMENT = 'treatment',

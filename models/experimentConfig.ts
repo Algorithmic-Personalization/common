@@ -7,6 +7,8 @@ import Model from '../../common/lib/model';
 
 import Admin from '../../server/models/admin';
 
+import {type ExperimentConfig as IndividualConfig} from '../createRecommendationsList';
+
 @Entity()
 export class ExperimentConfig extends Model {
 	@Column({type: 'double precision'})
@@ -30,5 +32,9 @@ export class ExperimentConfig extends Model {
 	@JoinColumn({name: 'admin_id'})
 		admin?: Admin;
 }
+
+export type ParticipantConfig = IndividualConfig & {
+	experimentConfigId: number;
+};
 
 export default ExperimentConfig;
