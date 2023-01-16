@@ -3,7 +3,7 @@
 import {Entity, Column, ManyToOne, JoinColumn} from 'typeorm';
 import {Min, Max, IsNumber, IsInt, IsString} from 'class-validator';
 
-import Model from '../../server/lib/model';
+import Model from '../../common/lib/model';
 
 import Admin from '../../server/models/admin';
 
