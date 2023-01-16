@@ -5,7 +5,7 @@ import {Min, Max, IsNumber, IsInt, IsString} from 'class-validator';
 
 import Model from '../../common/lib/model';
 
-import Admin from '../../server/models/admin';
+import Admin from './admin';
 
 import {type ExperimentConfig as IndividualConfig} from '../createRecommendationsList';
 
