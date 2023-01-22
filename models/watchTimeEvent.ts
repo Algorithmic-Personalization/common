@@ -1,6 +1,6 @@
 import Event, {EventType} from './event';
 
-export class WatchtimeEvent extends Event {
+export class WatchTimeEvent extends Event {
 	constructor(
 		public readonly secondsWatched: number,
 	) {
@@ -9,4 +9,4 @@ export class WatchtimeEvent extends Event {
 	}
 }
 
-export default WatchtimeEvent;
+export default WatchTimeEvent;
