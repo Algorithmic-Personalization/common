@@ -4,7 +4,7 @@ export type Recommendation = {
 	channelName: string;
 	videoId: string;
 	miniatureUrl: string;
-	hoverAnimationUrl: string;
+	hoverAnimationUrl?: string;
 	views: string;
 	publishedSince: string;
 	// Flag 'unknown' is only used before the recommendations can be distinguished
