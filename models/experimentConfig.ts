@@ -7,7 +7,7 @@ import Model from '../../common/lib/model';
 
 import Admin from './admin';
 
-import {type ExperimentConfig as IndividualConfig} from '../createRecommendationsList';
+import type IndividualExperimentConfig from '../types/IndividualExperimentConfig';
 
 @Entity()
 export class ExperimentConfig extends Model {
@@ -33,7 +33,7 @@ export class ExperimentConfig extends Model {
 		admin?: Admin;
 }
 
-export type ParticipantConfig = IndividualConfig & {
+export type ParticipantConfig = IndividualExperimentConfig & {
 	experimentConfigId: number;
 };
 
