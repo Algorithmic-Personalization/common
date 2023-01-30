@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 
 import {Entity, Column} from 'typeorm';
-import {IsInt, IsNotEmpty, IsString, IsPositive} from 'class-validator';
+import {IsInt, IsNotEmpty, IsString, IsPositive, IsOptional} from 'class-validator';
 
 import Model from '../lib/model';
 import {uuidv4} from '../util';
@@ -42,6 +42,7 @@ export class Event extends Model {
 
 	@Column()
 	@IsString()
+	@IsOptional()
 		context?: string;
 
 	@Column()
