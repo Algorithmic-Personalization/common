@@ -41,6 +41,10 @@ export class Event extends Model {
 		url: string = '';
 
 	@Column()
+	@IsString()
+		context?: string;
+
+	@Column()
 	@IsNotEmpty()
 	@IsString()
 		localUuid: string = uuidv4();
