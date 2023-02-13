@@ -51,9 +51,7 @@ export class Event extends Model {
 		localUuid: string = uuidv4();
 
 	@Column()
-	@IsNotEmpty()
-	@IsString()
-		extensionVersion: string = '0.0.0';
+		extensionVersion?: string;
 }
 
 export default Event;
