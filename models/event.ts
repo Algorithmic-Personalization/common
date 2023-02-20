@@ -15,7 +15,10 @@ export enum EventType {
 	WATCH_TIME = 'WATCH_TIME',
 }
 
-import {ExperimentArm} from './participant';
+export enum ExperimentArm {
+	TREATMENT = 'treatment',
+	CONTROL = 'control',
+}
 
 @Entity()
 export class Event extends Model {
