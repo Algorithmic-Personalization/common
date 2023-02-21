@@ -250,8 +250,10 @@ export const restoreInnerInstance = <T extends Object>(maybe: Maybe<T>, ctor: (n
 	};
 };
 
+export type HttpMethod = 'GET' | 'POST' | 'DELETE' | 'PUT';
+
 export const makeApiVerbCreator = (serverUrl: string) =>
-	(method: 'GET' | 'POST') => async <T>(path: string, data: unknown, headers: Record<string, string>) => {
+	(method: HttpMethod) => async <T>(path: string, data: unknown, headers: Record<string, string>) => {
 		const body = method === 'POST' ? JSON.stringify(data) : undefined;
 
 		try {
