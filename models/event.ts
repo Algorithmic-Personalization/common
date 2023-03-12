@@ -14,6 +14,7 @@ export enum EventType {
 	MIXED_CLICKED = 'MIXED_CLICKED',
 	WATCH_TIME = 'WATCH_TIME',
 	SESSION_END = 'SESSION_END',
+	PHASE_TRANSITION = 'PHASE_TRANSITION',
 }
 
 export enum ExperimentArm {
