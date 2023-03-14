@@ -252,12 +252,28 @@ export const restoreInnerInstance = <T extends Object>(maybe: Maybe<T>, ctor: (n
 
 export type HttpMethod = 'GET' | 'POST' | 'DELETE' | 'PUT';
 
+const makeQueryString = (params: Record<string, string | number | boolean>): string => {
+	const entries = Object.entries(params);
+	const chunks = entries.map(([key, value]) => `${key}=${encodeURIComponent(value)}`);
+
+	if (chunks.length === 0) {
+		return '';
+	}
+
+	return `?${chunks.join('&')}`;
+};
+
 export const makeApiVerbCreator = (serverUrl: string) =>
-	(method: HttpMethod) => async <T>(path: string, data: unknown, headers: Record<string, string>) => {
-		const body = method === 'POST' ? JSON.stringify(data) : undefined;
+	(method: HttpMethod) => async <T>(
+		path: string,
+		data: unknown,
+		headers: Record<string, string>,
+	) => {
+		const body = (method === 'POST' || method === 'PUT') ? JSON.stringify(data) : undefined;
+		const qs = (method === 'GET' && !path.includes('?')) ? makeQueryString(data as Record<string, string | number | boolean>) : '';
 
 		try {
-			const result = await fetch(`${serverUrl}${path}`, {
+			const result = await fetch(`${serverUrl}${path}${qs}`, {
 				method,
 				body,
 				headers,
