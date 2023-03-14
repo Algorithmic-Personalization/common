@@ -22,6 +22,9 @@ export enum ExperimentArm {
 	CONTROL = 'control',
 }
 
+export const isValidExperimentArm = (arm: unknown): arm is ExperimentArm =>
+	arm === ExperimentArm.TREATMENT || arm === ExperimentArm.CONTROL;
+
 @Entity()
 export class Event extends Model {
 	@Column()
