@@ -1,7 +1,16 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 
 import {Entity, Column} from 'typeorm';
-import {IsInt, IsNotEmpty, IsString, IsPositive, IsOptional, Min, Max} from 'class-validator';
+import {
+	IsInt,
+	IsNotEmpty,
+	IsString,
+	IsPositive,
+	IsOptional,
+	IsBoolean,
+	Min,
+	Max,
+} from 'class-validator';
 
 import Model from '../lib/model';
 import {uuidv4} from '../util';
@@ -66,6 +75,10 @@ export class Event extends Model {
 	@Min(0)
 	@Max(2)
 		phase: number = 0;
+
+	@Column()
+	@IsBoolean()
+		tabActive?: boolean;
 }
 
 export default Event;
