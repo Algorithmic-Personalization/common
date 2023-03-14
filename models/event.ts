@@ -7,7 +7,6 @@ import {
 	IsString,
 	IsPositive,
 	IsOptional,
-	IsBoolean,
 	Min,
 	Max,
 } from 'class-validator';
@@ -77,7 +76,6 @@ export class Event extends Model {
 		phase: number = 0;
 
 	@Column()
-	@IsBoolean()
 		tabActive?: boolean;
 }
 
