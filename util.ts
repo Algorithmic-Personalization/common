@@ -85,6 +85,9 @@ export const removeDuplicates = <T, U> (identifier: (x: T) => U) => (array: T[])
 export const has = (key: string) => (x: unknown): x is Record<string, unknown> =>
 	typeof x === 'object' && x !== null && key in x;
 
+export const record = (key: string) => (x: unknown): x is Record<string, Record<PropertyKey, unknown>> =>
+	has(key)(x) && typeof x[key] === 'object' && x[key] !== null;
+
 export const memoizeTemporarily = (ttlMs: number) => <T, U>(f: (x: T) => U): ((x: T) => U) => {
 	const cache = new Map<T, U>();
 
