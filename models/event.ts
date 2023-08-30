@@ -2,6 +2,7 @@
 
 import {Entity, Column} from 'typeorm';
 import {
+	IsDate,
 	IsInt,
 	IsNotEmpty,
 	IsString,
@@ -13,6 +14,12 @@ import {
 
 import Model from '../lib/model';
 import {uuidv4} from '../util';
+
+const localZeroHour = (day: Date): Date => {
+	const d = new Date(day);
+	d.setHours(0, 0, 0, 0);
+	return d;
+};
 
 export enum EventType {
 	PAGE_VIEW = 'PAGE_VIEW',
@@ -79,6 +86,11 @@ export class Event extends Model {
 
 	@Column()
 		tabActive?: boolean;
+
+	@Column()
+	@IsDate()
+	@IsOptional()
+		localZeroHour?: Date = localZeroHour(this.createdAt);
 }
 
 export default Event;
