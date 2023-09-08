@@ -1,6 +1,14 @@
-import {Column, PrimaryGeneratedColumn} from 'typeorm';
+import {Column, type ObjectLiteral, PrimaryGeneratedColumn} from 'typeorm';
 import {IsDate, IsInt, IsPositive} from 'class-validator';
-export class Model {
+
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+export interface ModelIface extends ObjectLiteral {
+	id: number;
+	createdAt: Date;
+	updatedAt: Date;
+}
+
+export class Model implements ModelIface {
 	@PrimaryGeneratedColumn()
 	@IsInt()
 	@IsPositive()
