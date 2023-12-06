@@ -10,6 +10,7 @@ export type Recommendation = {
 	// Flag 'unknown' is only used before the recommendations can be distinguished
 	personalization: 'personalized' | 'non-personalized' | 'mixed' | 'unknown';
 	channelMiniatureUrl?: string;
+	channelShortName?: string;
 };
 
 export default Recommendation;
