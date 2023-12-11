@@ -5,6 +5,7 @@ export {v4 as uuidv4} from 'uuid';
 import {validate as validateInstance, type ValidationError} from 'class-validator';
 
 import type Recommendation from './types/Recommendation';
+import {log} from '../lib';
 
 export type Success<T> = {
 	kind: 'Success';
@@ -140,7 +141,7 @@ export const get = (path: string[]) => (x: unknown): unknown => {
 
 	for (const key of path) {
 		if (!has(key)(out)) {
-			console.error('Missing property', key, 'in', out);
+			log('Missing property', key, 'in', out);
 			throw new Error(`Missing property ${key} in object.`);
 		}
 
