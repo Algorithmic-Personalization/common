@@ -1,6 +1,10 @@
-export type Recommendation = {
+export type RecommendationBase = {
 	title: string;
 	url: string;
+	videoId: string;
+};
+
+export type Recommendation = RecommendationBase & {
 	channelName: string;
 	videoId: string;
 	miniatureUrl: string;
