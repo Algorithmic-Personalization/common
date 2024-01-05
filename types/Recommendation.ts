@@ -6,7 +6,6 @@ export type RecommendationBase = {
 
 export type Recommendation = RecommendationBase & {
 	channelName: string;
-	videoId: string;
 	miniatureUrl: string;
 	hoverAnimationUrl?: string;
 	views: string;
