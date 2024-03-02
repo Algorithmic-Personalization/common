@@ -36,6 +36,7 @@ export class ExperimentConfig extends Model {
 export type ParticipantConfig = IndividualExperimentConfig & {
 	experimentConfigId: number;
 	phase: number;
+	channelSource?: string;
 };
 
 export default ExperimentConfig;
