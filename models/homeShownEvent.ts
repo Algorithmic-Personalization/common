@@ -5,6 +5,7 @@ export class HomeShownEvent extends Event {
 	constructor(
 		public readonly defaultRecommendations: RecommendationBase[],
 		public readonly replacementSource: RecommendationBase[],
+		public readonly shown?: RecommendationBase[],
 	) {
 		super();
 		this.type = EventType.HOME_SHOWN;
