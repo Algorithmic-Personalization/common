@@ -37,6 +37,7 @@ export type ParticipantConfig = IndividualExperimentConfig & {
 	experimentConfigId: number;
 	phase: number;
 	channelSource?: string;
+	pos?: number;
 };
 
 export default ExperimentConfig;
