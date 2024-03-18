@@ -95,7 +95,6 @@ export class Event extends Model {
 		localZeroHour?: Date = localZeroHour(this.createdAt);
 
 	@Column('simple-json')
-	@IsString({each: true})
 	@IsOptional()
 		extra?: Record<PropertyKey, unknown>;
 }
