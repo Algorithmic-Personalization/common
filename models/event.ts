@@ -97,7 +97,7 @@ export class Event extends Model {
 	@Column('simple-json')
 	@IsString({each: true})
 	@IsOptional()
-		extra: string[] = [];
+		extra?: Record<PropertyKey, unknown>;
 }
 
 export default Event;
