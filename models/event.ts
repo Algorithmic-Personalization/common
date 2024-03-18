@@ -93,6 +93,11 @@ export class Event extends Model {
 	@IsDate()
 	@IsOptional()
 		localZeroHour?: Date = localZeroHour(this.createdAt);
+
+	@Column('simple-json')
+	@IsString({each: true})
+	@IsOptional()
+		extra: string[] = [];
 }
 
 export default Event;
